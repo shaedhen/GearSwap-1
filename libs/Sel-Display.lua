@@ -194,6 +194,7 @@ function update_job_states()
 		RngHelper = "RngHelper",
 		RngHelperQuickDraw = "RngHelperQuickDraw",
 		RuneElement = "Rune Element",
+		AutoEffusionMode = "Auto Effusion",
 		SkillChainMode = "SkillchainMode",
 		Stance = "Stance",
 		UnlockWeapons = "Unlock Weapons",

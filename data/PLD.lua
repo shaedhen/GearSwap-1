@@ -204,7 +204,7 @@ function job_self_command(commandArgs, eventArgs)
 
 		elseif player.sub_job == 'RUN' then
 			local abil_recasts = windower.ffxi.get_ability_recasts()
-			
+
 			if abil_recasts[24] < latency then
 				send_command('input /ja "Swordplay" <me>')
 			end
@@ -214,14 +214,14 @@ function job_self_command(commandArgs, eventArgs)
 					
 			if spell_recasts[584] < spell_latency then
 				windower.chat.input('/ma "Sheep Song" <t>')
-			elseif spell_recasts[598] < spell_latency then
-				windower.chat.input('/ma "Soporific" <t>')
+		--	elseif spell_recasts[598] < spell_latency then
+		--		windower.chat.input('/ma "Soporific" <t>')
 			elseif spell_recasts[605] < spell_latency then
 				windower.chat.input('/ma "Geist Wall" <t>')
-			elseif spell_recasts[537] < spell_latency then
-				windower.chat.input('/ma "Stinking Gas" <t>')
-			elseif spell_recasts[575] < spell_latency then
-				windower.chat.input('/ma "Jettatura" <t>')
+	--		elseif spell_recasts[537] < spell_latency then
+	--			windower.chat.input('/ma "Stinking Gas" <t>')
+	--		elseif spell_recasts[575] < spell_latency then
+	--			windower.chat.input('/ma "Jettatura" <t>')
 			elseif spell_recasts[592] < spell_latency then
 				windower.chat.input('/ma "Blank Gaze" <t>')
 			elseif not check_ws() then
@@ -424,21 +424,29 @@ function job_tick()
 	if check_buff() then return true end
 	if job_check_buff() then return true end
 	if state.AutoTankMode.value and in_combat and player.target.type == "MONSTER" and not moving then
-		if check_flash() then return true
-		else 
-			windower.send_command('gs c SubJobEnmity')
-			add_tick_delay()
-			return true
-		end
+		if check_flash_foil() then return true end
+		if check_ws() then return true end
+		windower.send_command('gs c SubJobEnmity')
+		add_tick_delay()
+		return true		
 	end
 	return false
 end
 
-function check_flash()
+function check_flash_foil()
+	if silent_check_silence() then return false end
 	local spell_recasts = windower.ffxi.get_spell_recasts()
-
-	if spell_recasts[112] < spell_latency then
+	
+	if not buffactive['Enmity Boost'] and spell_recasts[476] < spell_latency then
+		windower.chat.input('/ma "Crusade" <me>')
+		add_tick_delay()
+		return true
+	elseif spell_recasts[112] < spell_latency then
 		windower.chat.input('/ma "Flash" <t>')
+		add_tick_delay()
+		return true
+	elseif spell_recasts[840] < spell_latency then
+		windower.chat.input('/ma "Foil" <me>')
 		add_tick_delay()
 		return true
 	else

@@ -63,12 +63,12 @@ function job_setup()
     state.Buff.Seigan = buffactive.Seigan or false
 	state.Stance = M{['description']='Stance','Hasso','Seigan','None'}
     state.Steps = M{['description']='Current Step', 'Quickstep','Box Step','Stutter Step'}
-	
+	state.AutoEffusionMode = M(false, 'Auto Effusion Mode')
 	autows = 'Resolution'
 	autofood = 'Miso Ramen'
 	
 	update_melee_groups()
-	init_job_states({"Capacity","AutoFoodMode","AutoTrustMode","AutoTankMode","AutoWSMode","AutoNukeMode","AutoJumpMode","AutoShadowMode","AutoStunMode","AutoDefenseMode"},{"AutoBuffMode","AutoSambaMode","AutoRuneMode","Weapons","OffenseMode","WeaponskillMode","Stance","IdleMode","Passive","RuneElement","CastingMode","PhysicalDefenseMode","MagicalDefenseMode","ResistDefenseMode","ExtraDefenseMode","TreasureMode",})
+	init_job_states({"Capacity","AutoEffusionMode","AutoFoodMode","AutoTrustMode","AutoTankMode","AutoWSMode","AutoNukeMode","AutoJumpMode","AutoShadowMode","AutoStunMode","AutoDefenseMode"},{"AutoBuffMode","AutoSambaMode","AutoRuneMode","Weapons","OffenseMode","WeaponskillMode","Stance","IdleMode","Passive","RuneElement","CastingMode","PhysicalDefenseMode","MagicalDefenseMode","ResistDefenseMode","ExtraDefenseMode","TreasureMode",})
 end
 
 -------------------------------------------------------------------------------------------------------------------
@@ -242,14 +242,14 @@ function job_self_command(commandArgs, eventArgs)
 					
 			if spell_recasts[584] < spell_latency then
 				windower.chat.input('/ma "Sheep Song" <t>')
-			elseif spell_recasts[598] < spell_latency then
-				windower.chat.input('/ma "Soporific" <t>')
+			--elseif spell_recasts[598] < spell_latency then
+				--windower.chat.input('/ma "Soporific" <t>')
 			elseif spell_recasts[605] < spell_latency then
 				windower.chat.input('/ma "Geist Wall" <t>')
-			elseif spell_recasts[537] < spell_latency then
-				windower.chat.input('/ma "Stinking Gas" <t>')
-			elseif spell_recasts[575] < spell_latency then
-				windower.chat.input('/ma "Jettatura" <t>')
+		--	elseif spell_recasts[537] < spell_latency then
+			--	windower.chat.input('/ma "Stinking Gas" <t>')
+		--	elseif spell_recasts[575] < spell_latency then
+		--		windower.chat.input('/ma "Jettatura" <t>')
 			elseif spell_recasts[592] < spell_latency then
 				windower.chat.input('/ma "Blank Gaze" <t>')
 			elseif not check_ws() then
@@ -359,14 +359,39 @@ function job_tick()
 	if check_buffup() then return true end
 	if check_buff() then return true end
 	if job_check_buff() then return true end
+	if check_offensive_ja() then return true end		
 	if state.AutoTankMode.value and in_combat and player.target.type == "MONSTER" and not moving then
 		if check_flash_foil() then return true end
+		if check_ws() then return true end
 		windower.send_command('gs c SubJobEnmity')
 		add_tick_delay()
 		return true
 	end
 	return false
 end
+
+function check_offensive_ja()
+	if  player.in_combat then
+		if state.AutoEffusionMode.value and player.status == 'Engaged' then	
+			local abil_recasts = windower.ffxi.get_ability_recasts()		
+			if abil_recasts[119] < latency and buffactive[state.RuneElement.value] > 2 then
+				windower.chat.input('/ja "Rayke" <t>')
+				tickdelay = os.clock() + 1.1
+				return true
+			elseif abil_recasts[25] < latency  and buffactive[state.RuneElement.value] > 2 then
+				windower.chat.input('/ja "Lunge" <t>')
+				tickdelay = os.clock() + 1.1
+				return true
+			elseif abil_recasts[116] < latency  and buffactive[state.RuneElement.value] > 2 then
+				windower.chat.input('/ja "Gambit" <t>')
+				tickdelay = os.clock() + 1.1
+				return true
+			end
+		end
+	end
+		
+	return false
+end		
 
 function job_check_buff()
 	return false
