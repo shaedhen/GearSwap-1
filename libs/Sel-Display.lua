@@ -147,6 +147,7 @@ function update_job_states()
 	-- Define labels for each state
 	local labels = {
 		AutoBuffMode = "Auto Buff",
+		AutoBuffBP = "A-Buff BP",
 		AutoCallPet = "Auto Call Pet",
 		AutoDefenseMode = "Auto Defense",
 		AutoEngageMode = "Auto Engage",

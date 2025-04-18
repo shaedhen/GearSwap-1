@@ -153,6 +153,7 @@ function job_setup()
 	state.PactSpamMode = M(false, 'Pact Spam Mode')
 	state.AutoFavor = M(true, 'Auto Favor')
 	state.AutoConvert = M(true, 'Auto Convert')
+	state.AutoBuffBP = M(false, 'A-Buff BP')
 
 	autows = 'Spirit Taker'
 	autofood = 'Akamochi'
@@ -738,7 +739,97 @@ function job_tick()
 	if check_favor() then return true end
 	if check_buffup() then return true end
 	if check_buff() then return true end
+	if check_auto_BP_buff() then return true end
 	return false
+end
+
+function check_auto_BP_buff()
+	local abil_recasts = windower.ffxi.get_ability_recasts()
+	if state.AutoBuffBP.value and abil_recasts[174] < latency and player.mpp > 20 then
+		if not buffactive['Warcry'] then
+			if not pet.isvalid then
+				windower.chat.input('/ma Ifrit <me>')
+				return true
+			end
+			if pet.name == 'Ifrit' then
+			windower.chat.input('/pet "Crimson Howl" <me>')
+			windower.chat.input:schedule(4,'/ja Release <me>')
+			else
+			windower.chat.input('/ja Release <me>')		
+			end
+		elseif not buffactive['Haste'] then
+			if not pet.isvalid then
+				windower.chat.input('/ma Garuda <me>')
+				return true
+			end
+			if pet.name == 'Garuda' then
+			windower.chat.input('/pet "Hastega II" <me>')
+			windower.chat.input:schedule(4,'/ja Release <me>')
+					else
+			windower.chat.input('/ja Release <me>')		
+			end
+		elseif not buffactive['CHR Boost'] and not buffactive['STR Boost'] then 
+			if not pet.isvalid then
+				windower.chat.input('/ma Fenrir <me>')
+				return true
+			end
+			if pet.name == 'Fenrir' then
+			windower.chat.input('/pet "Ecliptic Growl" <me>')
+			windower.chat.input:schedule(4,'/ja Release <me>')
+					else
+			windower.chat.input('/ja Release <me>')		
+			end
+		elseif not buffactive['TP Bonus'] then
+			if not pet.isvalid then
+				windower.chat.input('/ma Shiva <me>')
+				return true
+			end
+			if pet.name == 'Shiva' then
+			windower.chat.input('/pet "Crystal Blessing" <me>')
+			windower.chat.input:schedule(4,'/ja Release <me>')
+					else
+			windower.chat.input('/ja Release <me>')		
+			end
+	--	elseif not buffactive['Shock Spikes'] then
+	--		if not pet.isvalid then
+	--			windower.chat.input('/ma Ramuh <me>')
+	--			return true
+	--		end
+	--		if pet.name == 'Ramuh' then
+	--		windower.chat.input('/pet "Lightning Armor" <me>')
+	--		windower.chat.input:schedule(4,'/ja Release <me>')
+	--				else
+	--		windower.chat.input('/ja Release <me>')		
+	--		end
+		elseif not buffactive['Curing Conduit'] then
+			if not pet.isvalid then
+				windower.chat.input('/ma Leviathan <me>')
+				return true
+			end
+			if pet.name == 'Leviathan' then
+			windower.chat.input('/pet "Soothing Current" <me>')
+			windower.chat.input:schedule(4,'/ja Release <me>')
+					else
+			windower.chat.input('/ja Release <me>')		
+			end
+		elseif not buffactive['Phalanx'] then
+			if not pet.isvalid then
+				windower.chat.input('/ma Diabolos <me>')
+				return true
+			end
+			if pet.name == 'Diabolos' then
+			windower.chat.input('/pet "Noctoshield" <me>')
+			--windower.chat.input:schedule(4,'/ja Release <me>')
+					else
+			windower.chat.input('/ja Release <me>')		
+			end
+		end
+		
+		if not pet.isvalid then
+		windower.chat.input('/ma Diabolos <me>')  -- change here for another pt when idle
+		return true
+	  end
+	end
 end
 
 function check_favor()
