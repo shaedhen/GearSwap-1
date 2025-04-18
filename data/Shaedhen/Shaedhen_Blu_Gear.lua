@@ -160,7 +160,7 @@ function init_gear_sets()
 		hands="Jhakri Cuffs +2",
 		legs=gear.BLU_RELIC_Legs,
 		feet={ name="Nyame Sollerets", augments={'Path: B',}},	--EMPY+3
-		neck="Baetyl Pendant",
+		neck="Sibyl Scarf",
 		waist="Orpheus's Sash",
 		ear1="Moonshade Earring",
 		ear2="Friomisi Earring",
@@ -176,7 +176,7 @@ function init_gear_sets()
 		hands="Jhakri Cuffs +2",
 		legs=gear.BLU_RELIC_Legs,
 		feet={ name="Nyame Sollerets", augments={'Path: B',}},	--EMPY+3
-		neck="Baetyl Pendant",
+		neck="Sibyl Scarf",
 		waist="Orpheus's Sash",
 		ear1="Moonshade Earring",
 		ear2="Friomisi Earring",
@@ -192,7 +192,7 @@ function init_gear_sets()
 		hands={ name="Nyame Gauntlets", augments={'Path: B',}}, -- EMPY+3
 		legs=gear.BLU_RELIC_Legs,
 		feet={ name="Nyame Sollerets", augments={'Path: B',}},	--EMPY+3
-		neck="Baetyl Pendant",
+		neck="Sibyl Scarf",
 		waist="Orpheus's Sash",
 		ear1="Moonshade Earring",
 		ear2="Regal Earring",
@@ -378,7 +378,7 @@ function init_gear_sets()
 	}	
 
 	sets.precast.WS['Flash Nova'] = set_combine(sets.precast.WS,{ammo="Pemphredo Tathlum",
-			         neck="Baetyl Pendant",ear1="Regal Earring",ear2="Friomisi Earring",
+			         neck="Sibyl Scarf",ear1="Regal Earring",ear2="Friomisi Earring",
 		             ring1="Metamor. Ring +1",ring2="Shiva Ring +1",
 			         back=gear.nuke_jse_back,waist="Eschan Stone"})
 					 
@@ -510,7 +510,7 @@ function init_gear_sets()
 		back=gear.nuke_jse_back,waist="Luminary Sash",legs="Jhakri Slops +2",feet="Jhakri Pigaches +2"}
 
 	sets.midcast['Elemental Magic'] = {main="Nibiru Cudgel",sub="Nibiru Cudgel",ammo="Pemphredo Tathlum",
-		head=empty,neck="Baetyl Pendant",ear1="Regal Earring",ear2="Friomisi Earring",
+		head=empty,neck="Sibyl Scarf",ear1="Regal Earring",ear2="Friomisi Earring",
 		body="Cohort Cloak +1",hands="Amalric Gages +1",ring1="Shiva Ring +1",ring2="Shiva Ring +1",
 		back=gear.nuke_jse_back,waist=gear.ElementalObi,legs="Hagondes Pants +1",feet="Jhakri Pigaches +2"}
 

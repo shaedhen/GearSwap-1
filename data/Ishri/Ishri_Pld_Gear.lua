@@ -119,7 +119,7 @@ function init_gear_sets()
 		neck="Voltsurge Torque",
 		ear1="Enchntr. Earring +1",
 		ear2="Loquac. Earring",
-		body="Rev. Surcoat +3",
+		body="Rev. Surcoat +1",
 		hands="Leyline Gloves",
 		ring1="Lebeche Ring",
 		ring2="Kishar Ring",

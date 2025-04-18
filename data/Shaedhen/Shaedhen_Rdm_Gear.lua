@@ -43,10 +43,10 @@ function user_job_setup()
 	gear.obi_high_nuke_waist = "Refoccilation Stone"
 
 	gear.RDM_IDLE_Cape = {name="Sucellos's Cape", augments={'HP+60','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','"Fast Cast"+10','Damage taken-5%',}}
-  gear.RDM_MND_Cape = {name="Sucellos's Cape", augments={'MND+20','Mag. Acc+20 /Mag. Dmg.+20','"Mag.Atk.Bns."+10',}} --*
+  	gear.RDM_MND_Cape = {name="Sucellos's Cape", augments={'MND+20','Mag. Acc+20 /Mag. Dmg.+20','"Mag.Atk.Bns."+10',}} --*
 	gear.RDM_INT_Cape = {name="Sucellos's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','INT+5','"Mag.Atk.Bns."+10',}} --*
 	gear.RDM_TP_Cape = {name="Sucellos's Cape", augments={'DEX+20','Accuracy+20 Attack+20','"Store TP"+10','Damage taken-4%',}} --*
-  gear.RDM_WS1_Cape = {name="Sucellos's Cape", augments={'STR+20','Accuracy+20 Attack+20','STR+2','Weapon skill damage +10%',}} --*
+  	gear.RDM_WS1_Cape = {name="Sucellos's Cape", augments={'STR+20','Accuracy+20 Attack+20','STR+2','Weapon skill damage +10%',}} --*
 	gear.RDM_WS2_Cape = { name="Sucellos's Cape", augments={'DEX+20','Accuracy+20 Attack+20','DEX+5','Crit.hit rate+10',}} --*
 	gear.RDM_WS3_Cape = { name="Sucellos's Cape", augments={'AGI+20','Rng.Acc.+20 Rng.Atk.+20','Weapon skill damage +10%',}} --*
 	gear.RDM_WS4_Cape = {name="Sucellos's Cape", augments={'MND+20','Mag. Acc+20 /Mag. Dmg.+20','MND+10','Weapon skill damage +10%',}}
@@ -157,6 +157,76 @@ function init_gear_sets()
 	)
 		
 	-- Specific weaponskill sets.  Uses the base set if an appropriate WSMod version isn't found.
+
+	sets.precast.WS['Fast Blade'] = 
+	{
+		ammo	=	"Coiste Bodhar",
+		head	=	"Nyame Helm",
+		body	=	"Nyame Mail",
+		hands	=	"Malignance Gloves",
+		legs	=	"Nyame Flanchard",
+		feet	=	"Nyame Sollerets",
+		neck	=	"Rep. Plat. Medal",
+		waist	=	"Sailfi Belt +1",
+		ear1	=	"Sherida Earring",
+		ear2	=	"Moonshade Earring",
+		ring1	=	"Ilabrat Ring",
+		ring2	=	"Cornelia's ring",
+		back	=	gear.RDM_WS1_Cape
+		
+	}
+
+	sets.precast.WS['Shining Blade'] = 
+	{
+		ammo	=	"Sroda Tathlum", 
+		head	=	gear.RDM_EMPY_Head,
+		body	=	{ name="Nyame Mail", augments={'Path: B',}},
+		hands	=	gear.RDM_EMPY_Hands,
+		legs	=	"Nyame Flanchard",
+		feet	=	gear.RDM_EMPY_Feet,	
+        neck	=	"Fotia Gorget",
+        ear1	=	"Moonshade Earring",
+        ear2	=	"Malignance Earring",
+        ring1	=	"Cornelia's Ring",
+		ring2	=	"Weatherspoon Ring",
+        back	=	gear.RDM_WS4_Cape,
+		waist	=	"Orpheus's Sash",
+	}
+	
+	sets.precast.WS['Burning Blade'] = 
+	{
+		ammo	=	"Sroda Tathlum", 
+		head	=	gear.RDM_EMPY_Head,
+		body	=	{ name="Nyame Mail", augments={'Path: B',}},
+		hands	=	"Jhakri Cuffs +2",
+		legs	=	"Nyame Flanchard",
+		feet	=	gear.RDM_EMPY_Feet,	
+        neck	=	"Duelist's Torque +2",
+        ear1	=	"Moonshade Earring",
+        ear2	=	"Malignance Earring",
+        ring1	=	"Cornelia's Ring",
+		ring2	=	"Freke Ring",
+        back	=	gear.RDM_WS5_Cape,
+		waist	=	"Orpheus's Sash",
+	}
+
+	sets.precast.WS['Circle Blade'] = 
+	{
+		ammo	=	"Coiste Bodhar",
+		head	=	"Nyame Helm",
+		body	=	"Nyame Mail",
+		hands	=	"Nyame Gauntlets",
+		legs	=	"Nyame Flanchard",
+		feet	=	"Nyame Sollerets",
+		neck	=	"Fotia Gorget",
+		waist	=	"Sailfi Belt +1",
+		ear1	=	"Sherida Earring",
+		ear2	=	"Brutal Earring",
+		ring1	=	"Cornelia's ring",
+		ring2	=	"Sroda Ring",
+		back	=	gear.RDM_WS1_Cape,
+	}
+
 	sets.precast.WS['Requiescat'] = 
 	{
 		ammo	=	"Regal Gem",
@@ -190,8 +260,6 @@ function init_gear_sets()
 		back	=	gear.RDM_WS2_Cape,
 		waist	=	"Fotia Belt"
 	}
-		
-	sets.precast.WS['Evisceration'] = sets.precast.WS['Chant Du Cygne']
 
 	sets.precast.WS['Savage Blade'] = 
 	{
@@ -213,25 +281,51 @@ function init_gear_sets()
 	sets.precast.WS['Savage Blade'].Capped = 
 	{
 		ammo	=	"Crepuscular Pebble",
-		head={ name="Nyame Helm", augments={'Path: B',}},
-		body={ name="Nyame Mail", augments={'Path: B',}},
-		hands={ name="Nyame Gauntlets", augments={'Path: B',}},
-		legs={ name="Nyame Flanchard", augments={'Path: B',}},
+		head	=	{ name="Nyame Helm", augments={'Path: B',}},
+		body	=	{ name="Nyame Mail", augments={'Path: B',}},
+		hands	=	"Malignance Gloves",
+		legs	=	{ name="Nyame Flanchard", augments={'Path: B',}},
 		feet	=	gear.RDM_EMPY_Feet,	
         neck	=	"Duelist's Torque +2",
 		ear1	=	"Moonshade Earring",		
-        ear2	=	"Regal Earring",
+        ear2	=	"Ishvara Earring",
         ring1	=	"Cornelia's Ring",		
 		ring2	=	"Sroda Ring",
 		back	=	gear.RDM_WS1_Cape,
 		waist	=	"Sailfi Belt +1"	
 	}
 	
-	sets.precast.WS['Knights of the Round'] = sets.precast.WS['Savage Blade']
+	sets.precast.WS['Knights of Round'] = {
+		ammo	=	"Coiste Bodhar",
+		head	=	"Nyame Helm",
+		body	=	"Nyame Mail",
+		hands	=	"Nyame Gauntlets",
+		legs	=	"Nyame Flanchard",
+		feet	=	gear.RDM_EMPY_Feet,	
+		neck	=	"Rep. Plat. Medal",
+		waist	=	"Sailfi Belt +1",
+		ear1	=	"Sherida Earring",
+		ear2	=	"Telos Earring",
+		ring1	=	"Epaminondas's Ring",
+		ring2	=	"Cornelia's ring",
+		back	=	gear.RDM_WS1_Cape,
+	}
 	
-	sets.precast.WS['Knights of the Round'] = sets.precast.WS['Savage Blade']
-	
-	sets.precast.WS['Death Blossom'] = sets.precast.WS['Savage Blade']
+	sets.precast.WS['Death Blossom'] = {
+		ammo	=	"Coiste Bodhar",
+		head	=	"Nyame Helm",
+		body	=	"Nyame Mail",
+		hands	=	"Nyame Gauntlets",
+		legs	=	"Nyame Flanchard",
+		feet	=	gear.RDM_EMPY_Feet,	
+		neck	=	"Rep. Plat. Medal",
+		waist	=	"Sailfi Belt +1",
+		ear1	=	"Sherida Earring",
+		ear2	=	"Regal Earring",
+		ring1	=	"Shukuyu Ring",
+		ring2	=	"Cornelia's ring",
+		back	=	gear.RDM_WS1_Cape,
+	}
 		
 	sets.precast.WS['Sanguine Blade'] = 
 	{
@@ -283,7 +377,26 @@ function init_gear_sets()
         back	=	gear.RDM_WS5_Cape,
 		waist	=	"Orpheus's Sash",
 	}
-		
+	
+	sets.precast.WS['Viper Bite'] = 
+	{
+		ammo	=	"Crepuscular Pebble",
+		head	=	"Malignance Chapeau",
+		body	=	"Malignance Tabard",
+		hands	=	"Malignance Gloves",
+		legs	=	"Zoar Subligar +1",
+		feet	=	gear.RDM_EMPY_Feet,	
+		neck	=	"Fotia Gorget",
+		waist	=	"Sailfi Belt +1",
+		ear1	=	"Mache Earring +1",
+		ear2	=	"Sherida Earring",
+		ring1	=	"Cornelia's ring",
+		ring2	=	"Cacoethic Ring +1",
+		back	=	gear.RDM_WS2_Cape, --DA cape	
+	}
+
+	sets.precast.WS['Evisceration'] = sets.precast.WS['Chant Du Cygne']
+
 	sets.precast.WS['Aeolian Edge'] = 
 	{
 		ammo	=	"Sroda Tathlum", 
@@ -300,8 +413,45 @@ function init_gear_sets()
         back	=	gear.RDM_WS5_Cape,
         waist	=	"Orpheus's Sash"
 	}
+
+	sets.precast.WS['Gust Slash'] = sets.precast.WS['Aeolian Edge']
+	sets.precast.WS['Cyclone'] = sets.precast.WS['Aeolian Edge']
+
+	sets.precast.WS['Mercy Stroke'] = 
+	{
+		ammo	=	"Coiste Bodhar",
+		head={ name="Nyame Helm", augments={'Path: B',}},
+		body={ name="Nyame Mail", augments={'Path: B',}},
+		hands={ name="Nyame Gauntlets", augments={'Path: B',}},
+		legs={ name="Nyame Flanchard", augments={'Path: B',}},
+		feet	=	gear.RDM_EMPY_Feet,	
+        neck	=	"Rep. Plat. Medal",
+		ear1	=	"Moonshade Earring",	--Dominance +1	
+        ear2	=	"Sherida Earring",
+        ring1	=	"Cornelia's Ring",		
+		ring2	=	"Sroda Ring",
+		back	=	gear.RDM_WS1_Cape,
+		waist	=	"Sailfi Belt +1"	
+	}
+
+	sets.precast.WS['Extentator'] = 
+	{
+		ammo	=	"Coiste Bodhar",
+		head={ name="Nyame Helm", augments={'Path: B',}},
+		body={ name="Nyame Mail", augments={'Path: B',}},
+		hands={ name="Nyame Gauntlets", augments={'Path: B',}},
+		legs={ name="Nyame Flanchard", augments={'Path: B',}},
+		feet	=	gear.RDM_EMPY_Feet,	
+        neck	=	"Fotia Gorget",
+		ear1	=	"Mache Earring +1",	--Dominance +1	
+        ear2	=	"Sherida Earring",
+        ring1	=	"Cacoethic Ring +1",		
+		ring2	=	"Ilabrat Ring",
+		back	=	gear.RDM_WS1_Cape, --AGI...
+		waist	=	"Fotia Belt"	
+	}
 	
-	sets.precast.WS['Empyreal Arrow'] = 
+	sets.precast.WS['Empyreal Arrow'] = --Accuracy only
 	{
 		range	=	"Ullr",
 		ammo	=	"Demon Arrow",
@@ -336,6 +486,74 @@ function init_gear_sets()
 		feet="Atro. Boots +3"
     }
 	
+	sets.precast.WS['Shining Strike'] = 
+	{
+		ammo	=	"Sroda Tathlum", 
+		head	=	gear.RDM_EMPY_Head,
+		body	=	{ name="Nyame Mail", augments={'Path: B',}},
+		hands	=	gear.RDM_EMPY_Hands,
+		legs	=	"Nyame Flanchard",
+		feet	=	gear.RDM_EMPY_Feet,	
+        neck	=	"Sibyl Scarf",
+        ear1	=	"Moonshade Earring",
+        ear2	=	"Malignance Earring",
+        ring1	=	"Cornelia's Ring",
+		ring2	=	"Weatherspoon Ring",
+        back	=	gear.RDM_WS1_Cape,
+		waist	=	"Orpheus's Sash",	
+	}
+
+	sets.precast.WS['Seraph Strike'] = 
+	{
+		ammo	=	"Sroda Tathlum", 
+		head	=	gear.RDM_EMPY_Head,
+		body	=	{ name="Nyame Mail", augments={'Path: B',}},
+		hands	=	gear.RDM_EMPY_Hands,
+		legs	=	"Nyame Flanchard",
+		feet	=	gear.RDM_EMPY_Feet,	
+        neck	=	"Sibyl Scarf",
+        ear1	=	"Moonshade Earring",
+        ear2	=	"Malignance Earring",
+        ring1	=	"Cornelia's Ring",
+		ring2	=	"Weatherspoon Ring",
+        back	=	gear.RDM_WS1_Cape,
+		waist	=	"Orpheus's Sash",	
+	}
+
+	sets.precast.WS['Skullbreaker'] = 
+	{
+		ammo	=	"Coiste Bodhar", 
+		head	=	"Blistering Sallet +1",
+		body	=	{ name="Nyame Mail", augments={'Path: B',}},
+		hands	=	"Nyame Gauntlets",
+		legs	=	"Nyame Flanchard",
+		feet	=	gear.RDM_EMPY_Feet,	
+        neck	=	"Fotia Gorget",
+        ear1	=	"Sherida Earring",
+        ear2	=	"Lethargy Earring +1",
+        ring1	=	"Cornelia's Ring",
+		ring2	=	"Shukuyu Ring",
+        back	=	gear.RDM_WS1_Cape,
+		waist	=	"Sailfi Belt +1",	
+	}
+
+	sets.precast.WS['True Strike'] = 
+	{
+		ammo	=	"Yetshila +1",
+		head	=	"Blistering Sallet +1",
+		body	=	{ name="Nyame Mail", augments={'Path: B',}},
+		hands	=	"Malignance Gloves",
+		legs	=	{ name="Nyame Flanchard", augments={'Path: B',}},
+		feet	=	gear.RDM_EMPY_Feet,	
+        neck	=	"Null Loop",
+		ear1	=	"Sherida Earring",		
+        ear2	=	"Lethargy Earring +1",
+        ring1	=	"Cornelia's Ring",		
+		ring2	=	"Sroda Ring",
+		back	=	gear.RDM_WS1_Cape, --DA 
+		waist	=	"Sailfi Belt +1"	
+	}
+
 	sets.precast.WS['Black Halo'] = 
 	{
 		ammo	=	"Coiste Bodhar",
@@ -344,11 +562,45 @@ function init_gear_sets()
 		hands	=	{ name="Nyame Gauntlets", augments={'Path: B',}},
 		legs	=	{ name="Nyame Flanchard", augments={'Path: B',}},
 		feet	=	gear.RDM_EMPY_Feet,	
-        neck	=	"Duelist's Torque +2",
-		ear1	=	"Sherida Earring",		
+        neck	=	"Null Loop",
+		ear1	=	"Moonshade Earring",		
+        ear2	=	"Regal Earring", --Dominance
+        ring1	=	"Cornelia's Ring",		
+		ring2	=	"Epaminondas's Ring",
+		back	=	gear.RDM_WS1_Cape,
+		waist	=	"Sailfi Belt +1"	
+	}
+
+	sets.precast.WS['Black Halo'].Capped = 
+	{
+		ammo	=	"Crepuscular Pebble",
+		head	=	{ name="Nyame Helm", augments={'Path: B',}},
+		body	=	"Bunzi's Robe",
+		hands	=	"Malignance Gloves",
+		legs	=	{ name="Nyame Flanchard", augments={'Path: B',}},
+		feet	=	gear.RDM_EMPY_Feet,	
+        neck	=	"Null Loop",
+		ear1	=	"Moonshade Earring",		
         ear2	=	"Regal Earring",
         ring1	=	"Cornelia's Ring",		
-		ring2	=	"Metamorph Ring +1",
+		ring2	=	"Sroda Ring",
+		back	=	gear.RDM_WS1_Cape, --MND
+		waist	=	"Kentarch Belt +1"	
+	}
+
+	sets.precast.WS['Retribution'] = 
+	{
+		ammo	=	"Coiste Bodhar",
+		head	=	{ name="Nyame Helm", augments={'Path: B',}},
+		body	=	{ name="Nyame Mail", augments={'Path: B',}},
+		hands	=	{ name="Nyame Gauntlets", augments={'Path: B',}},
+		legs	=	{ name="Nyame Flanchard", augments={'Path: B',}},
+		feet	=	gear.RDM_EMPY_Feet,	
+        neck	=	"Fotia Gorget",
+		ear1	=	"Moonshade Earring",		
+        ear2	=	"Sherida Earring", 
+        ring1	=	"Cornelia's Ring",		
+		ring2	=	"Epaminondas's Ring",
 		back	=	gear.RDM_WS1_Cape,
 		waist	=	"Sailfi Belt +1"	
 	}

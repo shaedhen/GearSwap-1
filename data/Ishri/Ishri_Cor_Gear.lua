@@ -19,28 +19,26 @@ function user_job_setup()
 	
 	----COR----
 	--Laksamana
-	gear.COR_AF_Head		=	{ name="Laksamana's Tricorne +2"}
-    gear.COR_AF_Body		=	{ name="Laksamana's Frac +2"}
-    gear.COR_AF_Hands		=	{ name="Laksamana's Gants +2"}
-    gear.COR_AF_Legs		=	{ name="Laksamana's Trews +2"}
-    gear.COR_AF_Feet		=	{ name="Laksamana's Bottes +2"}
+--	gear.COR_AF_Head		=	{ name="Laksamana's Tricorne +2"}
+--   gear.COR_AF_Body		=	{ name="Laksamana's Frac +2"}
+--   gear.COR_AF_Hands		=	{ name="Laksamana's Gants +2"}
+--   gear.COR_AF_Legs		=	{ name="Laksamana's Trews +2"}
+--   gear.COR_AF_Feet		=	{ name="Laksamana's Bottes +2"}
     --Lanun
     gear.COR_RELIC_Head		=	{ name="Lanun Tricorne"}
     gear.COR_RELIC_Body		=	{ name="Lanun Frac"}
-    gear.COR_RELIC_Hands 	=	{ name="Lanun Gants"}
-    gear.COR_RELIC_Legs		=	{ name="Lanun Trews"}
-    gear.COR_RELIC_Feet		=	{ name="Lanun Bottes"}
+--    gear.COR_RELIC_Hands 	=	{ name="Lanun Gants"}
+--    gear.COR_RELIC_Legs		=	{ name="Lanun Trews"}
+--    gear.COR_RELIC_Feet		=	{ name="Lanun Bottes"}
     --Chasseur
-    gear.COR_EMPY_Head		=	{ name="Chasseur's Tricorne +1"}
-    gear.COR_EMPY_Body		=	{ name="Chasseur's Frac +1"}
+--    gear.COR_EMPY_Head		=	{ name="Chasseur's Tricorne +1"}
+--    gear.COR_EMPY_Body		=	{ name="Chasseur's Frac +1"}
     gear.COR_EMPY_Hands		=	{ name="Chasseur's Gants"}
-    gear.COR_EMPY_Legs		=	{ name="Chasseur's Culottes +1"}
-    gear.COR_EMPY_Feet		=	{ name="Chasseur's Bottes +1"}	
+--    gear.COR_EMPY_Legs		=	{ name="Chasseur's Culottes +1"}
+--    gear.COR_EMPY_Feet		=	{ name="Chasseur's Bottes +1"}	
 	-------------
 	----Capes----
-    gear.COR_WS1_Cape		=	{name="Camulus's Mantle", augments={'AGI+20','Rng.Acc.+20 Rng.Atk.+20','Weapon skill damage +10%',}} --*
-	gear.COR_WS2_Cape		=	{name="Camulus's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+3','Weapon skill damage +10%',}} --*
-	gear.COR_WS3_Cape		=	{name="Camulus's Mantle", augments={'AGI+20','Mag. Acc+20 /Mag. Dmg.+20','Weapon skill damage +10%',}}
+	gear.COR_WS_Cape		=	{name="Camulus's Mantle", augments={'STR+20','Accuracy+20 Attack+20','Weapon skill damage +10%',}} --*
 	gear.COR_TP_STP_Cape	=	{name="Camulus's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','"Store TP"+10',}} --*
 	-------------
 
@@ -58,11 +56,11 @@ function init_gear_sets()
 
     -- Precast sets to enhance JAs
 
-	sets.precast.JA['Triple Shot'] 	= 	{body	=	gear.COR_EMPY_Body}
-    sets.precast.JA['Snake Eye'] 	=	{legs	=	gear.COR_RELIC_Legs}
-    sets.precast.JA['Wild Card'] 	= 	{feet	=	gear.COR_RELIC_Feet}
+--	sets.precast.JA['Triple Shot'] 	= 	{body	=	gear.COR_EMPY_Body}
+--    sets.precast.JA['Snake Eye'] 	=	{legs	=	gear.COR_RELIC_Legs}
+--    sets.precast.JA['Wild Card'] 	= 	{feet	=	gear.COR_RELIC_Feet}
     sets.precast.JA['Random Deal'] 	= 	{body	=	gear.COR_RELIC_Body}
-    sets.precast.FoldDoubleBust 	= 	{hands	=	gear.COR_RELIC_Hands}
+--    sets.precast.FoldDoubleBust 	= 	{hands	=	gear.COR_RELIC_Hands}
 
     sets.precast.CorsairRoll = 
 	{
@@ -73,15 +71,15 @@ function init_gear_sets()
         body	=	gear.COR_RELIC_Body,
 		back	=	"Camulus's Mantle",
 		waist	=	"Carrier's Sash",
-		feet	=	gear.COR_RELIC_Feet
+--		feet	=	gear.COR_RELIC_Feet
 	}
 
     sets.precast.LuzafRing	=	{ring2	=	"Luzaf's Ring"}
     
-    sets.precast.CorsairRoll["Caster's Roll"]	=	set_combine(sets.precast.CorsairRoll, {legs		=	gear.COR_EMPY_Legs})
-    sets.precast.CorsairRoll["Courser's Roll"]	=	set_combine(sets.precast.CorsairRoll, {feet		=	gear.COR_EMPY_Feet})
-    sets.precast.CorsairRoll["Blitzer's Roll"]	=	set_combine(sets.precast.CorsairRoll, {head		=	gear.COR_EMPY_Head})
-    sets.precast.CorsairRoll["Tactician's Roll"]=	set_combine(sets.precast.CorsairRoll, {body		=	gear.COR_EMPY_Body})
+ --   sets.precast.CorsairRoll["Caster's Roll"]	=	set_combine(sets.precast.CorsairRoll, {legs		=	gear.COR_EMPY_Legs})
+ --   sets.precast.CorsairRoll["Courser's Roll"]	=	set_combine(sets.precast.CorsairRoll, {feet		=	gear.COR_EMPY_Feet})
+ --   sets.precast.CorsairRoll["Blitzer's Roll"]	=	set_combine(sets.precast.CorsairRoll, {head		=	gear.COR_EMPY_Head})
+ --   sets.precast.CorsairRoll["Tactician's Roll"]=	set_combine(sets.precast.CorsairRoll, {body		=	gear.COR_EMPY_Body})
     sets.precast.CorsairRoll["Allies' Roll"]	=	set_combine(sets.precast.CorsairRoll, {hands	=	gear.COR_EMPY_Hands})
     
     sets.precast.CorsairShot = 
@@ -145,25 +143,9 @@ function init_gear_sets()
     -- Default set for any weaponskill that isn't any more specifically defined
     sets.precast.WS = 
 	{
-        head	=	gear.COR_RELIC_Head,
-		neck	=	"Fotia Gorget",
-		ear1	=	"Moonshade Earring",
-		ear2	=	"Ishvara Earring",
-        body	=	gear.COR_AF_Body,
-		hands	=	"Meg. Gloves +2",
-		ring1	=	"Karieyh Ring",
-		ring2	=	"Ilabrat Ring",
-        back	=	gear.COR_WS1_Cape,
-		waist	=	"Fotia Belt",
-		legs	=	"Meg. Chausses +2",
-		feet	=	gear.COR_RELIC_Feet
-	}
-
-	sets.precast.WS['Savage Blade'] = 
-	{
 		ammo	=	gear.WSbullet,
         head	=	"Nyame Helm",
-		neck	=	"Commodore Charm +1",
+		neck	=	"Commodore Charm",
 		ear1	=	"Moonshade Earring",
 		ear2	=	"Ishvara Earring",
         body	=	"Nyame Mail",
@@ -171,7 +153,25 @@ function init_gear_sets()
 		hands	=	"Nyame Gauntlets",
 		ring1	=	"Rufescent Ring",
 		ring2	=	"Karieyh Ring",
-        back	=	gear.COR_WS2_Cape,
+        back	=	gear.COR_WS_Cape,
+		waist	=	"Sailfi Belt +1",
+		legs	=	"Nyame Flanchard",
+		feet	=	"Nyame Sollerets"
+	}
+
+	sets.precast.WS['Savage Blade'] = 
+	{
+		ammo	=	gear.WSbullet,
+        head	=	"Nyame Helm",
+		neck	=	"Commodore Charm",
+		ear1	=	"Moonshade Earring",
+		ear2	=	"Ishvara Earring",
+        body	=	"Nyame Mail",
+		--body = "Ikenga's Vest",
+		hands	=	"Nyame Gauntlets",
+		ring1	=	"Rufescent Ring",
+		ring2	=	"Karieyh Ring",
+        back	=	gear.COR_WS_Cape,
 		waist	=	"Sailfi Belt +1",
 		legs	=	"Nyame Flanchard",
 		feet	=	"Nyame Sollerets"
@@ -319,18 +319,18 @@ function init_gear_sets()
     -- Normal melee group
     sets.engaged = 
 	{
-		head	=	"Adhemar Bonnet +1",
+		head	=	"Dampening Tam",
 		neck	=	"Iskur Gorget",
 		ear1	=	"Brutal Earring",
 		ear2	=	"Telos Earring",
-		body	=	"Malignance Tabard",
-		hands	=	"Adhemar Wrist. +1",
-		ring1	=	"Chirich Ring",
+        body	=	"Nyame Mail",
+		hands	=	"Malignance Gloves",
+		ring1	=	"Defending Ring",
 		ring2	=	"Petrov Ring",
 		back	=	gear.COR_TP_STP_Cape,
-		waist	=	"Kentarch Belt +1",
+		waist	=	"Sailfi Belt +1",
 		legs	=	"Samnuha Tights",
-		feet	=	gear.Herc_trip_feet
+		feet	=	"Herculean Boots"
 	}	
 	
 end
