@@ -61,6 +61,10 @@ data.elements.quickdraw_of = {['Fire']='Fire', ['Ice']='Ice', ['Wind']='Wind', [
 data.elements.enspell_of = {['Fire']='Fire', ['Ice']='Blizzard', ['Wind']='Aero', ['Earth']='Stone',
 		['Lightning']='Thunder', ['Water']='Water', ['Light']='Light', ['Dark']='Dark',}
 
+data.elements.barelement_of = {['Light']='Barfire',['Dark']='Barblizzard',['Fire']='Barfire',
+		['Earth']='Barstone',['Water']='Barwater',['Wind']='Baraero',['Ice']='Barblizzard',
+		['Lightning']='Barthunder'}
+
 data.elements.runes_lookup = {['Lux']='Light', ['Tenebrae']='Dark', ['Ignis']='Fire', ['Gelus']='Ice', ['Flabra']='Wind',
 	 ['Tellus']='Earth', ['Sulpor']='Lightning', ['Unda']='Water'}
 
@@ -785,20 +789,21 @@ spell_stepdown = {
 }
 
 item_stepdown = {
-	['Warp Ring'] = {'Treat Staff II','main'},
-	['Treat Staff II'] = {'Warp Cudgel','main'},
-	['Warp Cudgel'] = {'Instant Warp','item'},
-	['Dusty Reraise'] = {'Instant Reraise','item'},
-	['Instant Reraise'] = {'Reraiser','item'},
-	['Reraiser'] = {'Hi-Reraiser','item'},
-	['Hi-Reraiser'] = {'Scapegoat','item'},
-	['Scapegoat'] = {'Super Reraiser','item'},
-	['Super Reraiser'] = {'Revive Feather','item'},
-	['Revive Feather'] = {'Rebirth Feather','item'},
-	['Rebirth Feather'] = {'Reraise Ring','ring2'},
-	['Reraise Ring'] = {'Reraise Earring','ear2'},
-	['Reraise Earring'] = {'Reraise Hairpin','head'},
-	['Reraise Hairpin'] = {'Wh. Rarab Cap +1','head'},
+	["Warp Ring"] = {"Treat Staff II","main"},
+	["Treat Staff II"] = {"Warp Cudgel","main"},
+	["Warp Cudgel"] = {"Instant Warp","item"},
+	["Dusty Reraise"] = {"Instant Reraise","item"},
+	["Instant Reraise"] = {"Reraiser","item"},
+	["Reraiser"] = {"Hi-Reraiser","item"},
+	["Hi-Reraiser"] = {"Scapegoat","item"},
+	["Scapegoat"] = {"Super Reraiser","item"},
+	["Super Reraiser"] = {"Revive Feather","item"},
+	["Revive Feather"] = {"Rebirth Feather","item"},
+	["Rebirth Feather"] = {"Airmid's Gorget","neck"},
+	["Airmid's Gorget"] = {"Reraise Ring","ring2"},
+	["Reraise Ring"] = {"Reraise Earring","ear2"},
+	["Reraise Earring"] = {"Reraise Hairpin","head"},
+	["Reraise Hairpin"] = {"Wh. Rarab Cap +1","head"},
 }
 
 

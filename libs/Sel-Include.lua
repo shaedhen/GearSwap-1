@@ -166,7 +166,7 @@ function init_include()
 	state.SkipProcWeapons 	  = M(false, 'Skip Proc Weapons')
 	state.UnlockWeapons		  = M(false, 'Unlock Weapons')
 	state.UseCustomTimers 	  = M(true, 'Use Custom Timers')
-	state.WakeUpWeapons 	  =	M(false, 'Swap Weapons To Wake Up')
+	state.WakeUpWeapons 	  =	M(false, 'Wake Up Weapons')
 
 	state.Buff = {}
 	NotifyBuffs = S{}
@@ -793,7 +793,6 @@ function handle_actions(spell, action)
 	
 	equip(internal_disable)
 end
-
 
 --------------------------------------
 -- Action hooks called by GearSwap.
@@ -1621,7 +1620,7 @@ end
 -- Returns the appropriate melee set based on current state values.
 -- Set construction order (all sets after sets.engaged are optional):
 --   sets.engaged[state.CombatForm][state.CombatWeapon][state.OffenseMode][state.DefenseMode][classes.CustomMeleeGroups (any number)]
-function get_melee_set()
+function get_melee_set(petStatus)
 	local meleeSet = sets.engaged
 	
 	if not meleeSet then
@@ -1714,7 +1713,7 @@ end
 -- Returns the appropriate resting set based on current state values.
 -- Set construction order:
 --   sets.resting[state.RestingMode]
-function get_resting_set()
+function get_resting_set(petStatus)
 	local restingSet = sets.resting
 
 	if not restingSet then
