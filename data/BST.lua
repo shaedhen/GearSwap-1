@@ -412,11 +412,15 @@ function job_midcast(spell, spellMap, eventArgs)
 
 end
 
-function job_aftercast(spell, spellMap, eventArgs)
+function job_post_aftercast(spell, spellMap, eventArgs)
 	if spell.type == 'Monster' then
 		petWillAct = os.clock()
 
 		if spell.interrupted then
+			return
+		end
+
+		if state.DefenseMode.value ~= 'None' and not state.Buff["Unleash"] then
 			return
 		end
 

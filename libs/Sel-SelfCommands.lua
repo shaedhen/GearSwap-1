@@ -247,6 +247,18 @@ function handle_jump()
 	check_jump(true)
 end
 
+function handle_value(cmdParams)
+	local stateName = state[cmdParams[1]] or nil
+
+	if stateName and tostring(stateName) then
+		add_to_chat(122, tostring(stateName))
+	elseif _G[cmdParams[1]] then
+		add_to_chat(122, cmdParams[1] .. " = " .. tostring(_G[cmdParams[1]]))
+	else
+		add_to_chat(123, "Global value not found.")
+	end
+end
+
 -- Function to reset values to their defaults.
 -- User command format: gs c reset [field]
 -- Or: gs c reset all
@@ -454,6 +466,11 @@ function handle_showtp(cmdParams)
 	internal_disable_set(get_melee_set(), "ShowTP")
 end
 
+function handle_enable(cmdParams)
+	if cmdParams[1]:lower() == 'all' then
+		internal_disable = {}
+	end
+end
 
 -- Minor variation on the GearSwap "gs equip naked" command, that ensures that
 -- all slots are enabled before removing gear.
@@ -699,10 +716,15 @@ function handle_elemental(cmdParams)
 		end
 	elseif command == 'ninjutsu' then
 		windower.chat.input('/ma "'..data.elements.ninjutsu_nuke_of[state.ElementalMode.value]..': Ni" '..target)
-
 	elseif command == 'ancientmagic' then
 		windower.chat.input('/ma "'..data.elements.ancient_nuke_of[state.ElementalMode.value]..'" '..target)
+	elseif command == 'barelement' then
+		local barspell = data.elements.barelement_of[data.elements.weak_to[state.ElementalMode.value]]
 
+		if not buffactive[barspell] then
+			windower.chat.input('/ma "'..barspell..'" <me>')
+			add_tick_delay(1.1)
+		end
 	elseif command:startswith('tier') then
 		local spell_recasts = windower.ffxi.get_spell_recasts()
 		local tierlist = {['tier1']='',['tier2']=' II',['tier3']=' III',['tier4']=' IV',['tier5']=' V',['tier6']=' VI'}
@@ -1456,9 +1478,6 @@ end
 
 -- A function for testing lua code.  Called via "gs c test".
 function handle_test(cmdParams)
-	if false == false then
-		add_to_chat('true')
-	end
 	if user_test then
 		user_test(cmdParams)
 	elseif job_test then
