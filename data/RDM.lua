@@ -201,10 +201,6 @@ function job_post_midcast(spell, spellMap, eventArgs)
 			end
 		elseif spell.skill == 'Enhancing Magic' then
 			equip(sets.midcast['Enhancing Magic'])
-		
-			if buffactive.Composure and spell.target.type == 'PLAYER' then
-				equip(sets.buff.ComposureOther)
-			end
 			
 			if sets.midcast[spell.english] then
 				equip(sets.midcast[spell.english])
@@ -220,6 +216,19 @@ function job_post_midcast(spell, spellMap, eventArgs)
 				end
 			end
 
+			if buffactive.Composure and spell.target.type == 'PLAYER' then
+				equip(sets.buff.ComposureOther)
+				if spell.english:startswith('Phalanx') then
+					equip(sets.midcast.PhalanxOther)
+				end
+				if spell.english:startswith('Regen') then
+					equip(sets.midcast.RegenOther)
+				end			
+				if spell.english:startswith('Refresh') then
+					equip(sets.midcast.RefreshOther)
+				end						
+			end
+			
 			if spell.english:startswith('Phalanx') and spell.target.type =='SELF' and sets.Self_Phalanx then
 				equip(sets.Self_Phalanx)
 

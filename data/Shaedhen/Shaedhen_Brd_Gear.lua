@@ -56,7 +56,7 @@ function init_gear_sets()
 		body="Inyanga Jubbah +2",
 		hands="Gendewitha Gages +1",
 		ring1="Kishar Ring",
-		ring2="Weatherspoon Ring",
+		ring2="Weatherspoon Ring +1",
 		back=gear.BRD_FC_Cape,
 		waist="Witful Belt",
 		legs="Kaykaus Tights +1",

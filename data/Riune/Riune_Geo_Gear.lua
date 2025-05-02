@@ -81,11 +81,11 @@ function init_gear_sets()
 	sets.midcast.Geomancy = {main="Solstice",sub="Genmei Shield",range="Dunna",
 		head="Vanya Hood",neck="Incanter's Torque",ear1="Gifted Earring",ear2="Malignance Earring",
 		body="Vedic Coat",hands="Geo. Mitaines +3",ring1="Defending Ring",ring2="Dark Ring",
-		back="Solemnity Cape",waist="Austerity Belt +1",legs="Vanya Slops",feet="Medium's Sabots"}
+		back="Lifestream Cape",waist="Austerity Belt +1",legs="Vanya Slops",feet="Medium's Sabots"}
 
 
 	--Extra Indi duration as long as you can keep your 900 skill cap.
-	sets.midcast.Geomancy.Indi = set_combine(sets.midcast.Geomancy, {back=gear.idle_jse_back,legs="Bagua Pants +1",feet="Azimuth Gaiters +1"})
+	sets.midcast.Geomancy.Indi = set_combine(sets.midcast.Geomancy, {back="Lifestream Cape",legs="Bagua Pants +1",feet="Azimuth Gaiters +1"})
 		
     sets.midcast.Cure = {main="Daybreak",sub="Sors Shield",ammo="Hasty Pinion +1",
         head="Amalric Coif +1",neck="Incanter's Torque",ear1="Gifted Earring",ear2="Etiolation Earring",

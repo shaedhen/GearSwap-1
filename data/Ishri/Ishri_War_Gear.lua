@@ -232,7 +232,7 @@ function init_gear_sets()
 	sets.TreasureHunter = set_combine(sets.TreasureHunter, {})
 	
 	-- Weapons sets
-	sets.weapons.GAxe = {main="Ferocity",sub="Utu Grip"}
+	sets.weapons.GAxe = {main="Chango",sub="Utu Grip"}
 	sets.weapons.Naegling = {main="Naegling",sub="Blurred Shield +1"}
 	sets.weapons.Greatsword = {main="Montante +1",sub="Utu Grip"}
 	sets.weapons.Spear = {main="Shining One",sub="Utu Grip"}
