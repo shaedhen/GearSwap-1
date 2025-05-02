@@ -378,7 +378,7 @@ function init_gear_sets()
         sub="Khonsu",
         ammo="Staunch Tathlum +1", --5/0		
         head="Nyame Helm",
-        body=gear.GEO_EMPY_Body,
+        body="Shamash Robe",
 		hands=gear.GEO_RELIC_Hands,
         legs="Nyame Flanchard",
         feet=gear.GEO_AF_Feet,

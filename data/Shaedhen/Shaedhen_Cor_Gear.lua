@@ -87,8 +87,8 @@ function init_gear_sets()
 		ring1	=	"Defending Ring",
 	--	ring2	=	"Gelatinous Ring",
 		back	=	gear.COR_TP_STP_Cape,
-		waist	=	"Carrier's Sash",
-	--	legs	=	"Desultor Tassets",
+		waist	=	"Null Belt",
+		legs	=	"Desultor Tassets",
 		feet	=	gear.COR_RELIC_Feet
 	}
 
