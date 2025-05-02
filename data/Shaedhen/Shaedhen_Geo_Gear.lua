@@ -377,10 +377,10 @@ function init_gear_sets()
         main="Malignance Pole",
         sub="Khonsu",
         ammo="Staunch Tathlum +1", --5/0		
-        head="Nyame Helm",
+        head=gear.GEO_EMPY_Head,
         body="Shamash Robe",
 		hands=gear.GEO_RELIC_Hands,
-        legs="Nyame Flanchard",
+        legs="Agwu's Slops",
         feet=gear.GEO_AF_Feet,
         neck="Warder's Charm +1",
         ear1="Hearty Earring",
@@ -388,20 +388,11 @@ function init_gear_sets()
         ring1="Stikini Ring +1",
         ring2="Defending Ring",
         back=gear.idle_jse_back,
-		waist="Carrier's Sash",	
+		waist="Null Belt",	
         }
 		
 	    sets.idle.DT = set_combine(sets.idle, {
-   --     main="Bolelabunga",
-    --    sub="Genmei Shield", --10/0
-    --    body="Mallquis Saio +2", --8/8
-    --    feet="Azimuth Gaiters +2", --4/0
         neck="Loricate Torque +1", --6/6
-   --     ear1="Genmei Earring", --2/0
-        ring1="Jelly Ring", --7/(-1)
-        ring2="Defending Ring", --10/10
-     --   back="Moonlight Cape", --6/6
-     --   waist="Slipor Sash", --0/3
         })
 
 	-- .Pet sets are for when Luopan is present.
@@ -411,14 +402,14 @@ function init_gear_sets()
         sub="Genmei Shield",
         ranged="Dunna",
         head=gear.GEO_EMPY_Head,
-        body="Agwu's Robe",
-		hands=gear.GEO_RELIC_Hands,
+        body="Shamash Robe",
+		hands=gear.GEO_AF_Hands,
         --legs="Nyame Flanchard",
-        legs="Assiduity Pants +1",
+        legs="Agwu's Slops",
 		feet=gear.GEO_RELIC_Feet,
         neck="Bagua Charm +1",
         ear1="Etiolation Earring", --3*/0
-        ear2="Lugalbanda Earring", --4*/0
+        ear2="Odnowa Earring +1", --4*/0
 		ring1="Stikini Ring +1",
         ring2="Defending Ring",
         back= gear.idle_jse_back ,
