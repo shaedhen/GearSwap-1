@@ -128,6 +128,21 @@ function init_gear_sets()
 		waist="Fotia Belt",
 	}
 
+	sets.precast.WS["Shell Crusher"] = { --Accuracy to the max !
+		head="Blistering sallet +1",
+    	body=gear.GEO_EMPY_Body,
+    	hands="Gazu bracelets +1", 
+    	legs=gear.GEO_EMPY_Legs,
+    	feet=gear.GEO_EMPY_Feet, 
+		neck="Null Loop",
+		ear1="Crepuscular Earring",
+		ear2="Dominance Earring +1",
+		ring1="Chirich Ring +1",
+		ring2="Chirich Ring +1",
+		back="Null Shawl",
+		waist="Null Belt", 
+	}
+
 	sets.precast.WS["Earth Crusher"] = {
 		ammo="Ghastly Tathlum +1",
 		head="Nyame Helm",
