@@ -8,7 +8,7 @@ function user_job_setup()
     state.IdleMode:options('Normal','Sphere')
 	state.Weapons:options('None','SeqThib','NaegThib','Tanma','MeleeClubs')
 	gear.da_jse_back = {name="Rosmerta's Cape",augments={'DEX+20','Accuracy+20 Attack+20','Accuracy+10','"Dbl.Atk."+10',}}
-	gear.stp_jse_back = {name="Rosmerta's Cape",augments={'DEX+20','Accuracy+20 Attack+20','"Store TP"+10',}}
+	gear.stp_jse_back = {name="Rosmerta's Cape",augments={'DEX+20','Accuracy+20 Attack+20','"Store TP"+10','Phys. dmg. taken-10%',}}
 	gear.crit_jse_back = {name="Rosmerta's Cape",augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','Crit.hit rate+10',}}
 	gear.wsd_jse_back = {name="Rosmerta's Cape",augments={'STR+20','Accuracy+20 Attack+20','Weapon skill damage +10%',}}
 	gear.nuke_jse_back = {name="Rosmerta's Cape",augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','"Mag.Atk.Bns."+10',}}
@@ -694,7 +694,7 @@ function init_gear_sets()
 		hands="Malignance Gloves",
 		ring1="Defending Ring",
 		ring2="Epona's Ring",
-		back=gear.da_jse_back,
+		back=gear.stp_jse_back,
 		waist="Reiki Yotai",
 		legs="Malignance Tights",
 		feet="Carmine Greaves +1"

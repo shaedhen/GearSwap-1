@@ -76,15 +76,15 @@ sets.precast.Item['Holy Water'] = {}
     --Azimuth
     gear.GEO_EMPY_Head		=	{ name="Azimuth Hood +2"}
     gear.GEO_EMPY_Body		=	{ name="Azimuth Coat +2"}
-    gear.GEO_EMPY_Hands		=	{ name="Azimuth Gloves +2"}
-    gear.GEO_EMPY_Legs		=	{ name="Azimuth Tights +2"}
+    gear.GEO_EMPY_Hands		=	{ name="Azimuth Gloves +1"}
+    gear.GEO_EMPY_Legs		=	{ name="Azimuth Tights +1"}
     gear.GEO_EMPY_Feet		=	{ name="Azimuth Gaiters +2"}	
 	----BRD
 	--Brioso
 	gear.BRD_AF_Head		=	{ name="Brioso Roundlet +3"}
-    gear.BRD_AF_Body		=	{ name="Brioso Jstcorps +3"}
+    gear.BRD_AF_Body		=	{ name="Brioso Jstcorps +2"}
     gear.BRD_AF_Hands		=	{ name="Brioso Cuffs +3"}
-    gear.BRD_AF_Legs		=	{ name="Brioso Cannions +3"}
+    gear.BRD_AF_Legs		=	{ name="Brioso Cannions +2"}
     gear.BRD_AF_Feet		=	{ name="Brioso Slippers +3"}
     --Bihu
     gear.BRD_RELIC_Head		=	{ name="Bihu Roundlet +3"}
@@ -224,6 +224,8 @@ sets.precast.Item['Holy Water'] = {}
 	gear.Merli_DraAsp_feet={ name="Merlinic Crackows", augments={'"Mag.Atk.Bns."+4','"Drain" and "Aspir" potency +10',}}
 	gear.Merli_BPPhys_hands={ name="Merlinic Dastanas", augments={'Pet: Accuracy+30 Pet: Rng. Acc.+30','Blood Pact Dmg.+9','Pet: INT+7','Pet: Mag. Acc.+6','Pet: "Mag.Atk.Bns."+14',}}
 	gear.Merli_BPMagi_hands={name="Merlinic Dastanas", augments={'Pet: "Mag.Atk.Bns."+24','Blood Pact Dmg.+10','Pet: INT+10','Pet: Mag. Acc.+15',}}
+	gear.Merli_DraAsp_feet={ name="Merlinic Crackows", augments={'"Mag.Atk.Bns."+4','"Drain" and "Aspir" potency +10',}}
+	gear.Merli_DraAsp_feet={ name="Merlinic Crackows", augments={'"Mag.Atk.Bns."+4','"Drain" and "Aspir" potency +10',}}
 	
 	-- Chironic
 	gear.Chiro_DraAsp_head={ name="Chironic Hat", augments={'"Drain" and "Aspir" potency +10','INT+8','Mag. Acc.+11','"Mag.Atk.Bns."+12',}}
@@ -274,21 +276,29 @@ sets.precast.Item['Holy Water'] = {}
 	gear.Psycloth_D_legs={name="Psycloth Lappas", augments={'MP+80','Mag. Acc.+15','"Fast Cast"+7',}}	
 	
     -- Ambuscade Capes
-	gear.COR_WS1_Cape = {name="Camulus's Mantle", augments={'AGI+20','Rng.Acc.+20 Rng.Atk.+20','Weapon skill damage +10%',}} --*
+  gear.COR_WS1_Cape = {name="Camulus's Mantle", augments={'AGI+20','Rng.Acc.+20 Rng.Atk.+20','Weapon skill damage +10%',}} --*
 	gear.COR_WS2_Cape = {name="Camulus's Mantle", augments={'STR+23','Accuracy+20 Attack+20','STR+3','Weapon skill damage +10%',}} --*
 	gear.COR_WS3_Cape = {name="Camulus's Mantle", augments={'AGI+20','Mag. Acc+20 /Mag. Dmg.+20','Weapon skill damage +10%',}}
 	gear.COR_TP_Cape = {name="Camulus's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','"Store TP"+10','Damage taken-5%',}} --*
-	
 	gear.BRD_TP_Cape = {name="Intarabus's Cape", augments={'DEX+20','Accuracy+20 Attack+20','"Store TP"+10','Damage taken-5%',}} --*
 	gear.BRD_FC_Cape = {name="Intarabus's Cape", augments={'CHR+20','Mag. Acc+20 /Mag. Dmg.+20','"Fast Cast"+10',}} --*
 	gear.BRD_Idle_Cape = { name="Intarabus's Cape", augments={'HP+60','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','"Fast Cast"+10','Damage taken-5%',}} --*
 	gear.BRD_WS1_Cape = {name="Intarabus's Cape", augments={'STR+20','Accuracy+20 Attack+20','Weapon skill damage +10%',}} --*
-	
-	
+	gear.RDM_IDLE_Cape = {name="Sucellos's Cape", augments={'HP+60','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','"Fast Cast"+10','Damage taken-5%',}}
+  gear.RDM_MND_Cape = {name="Sucellos's Cape", augments={'MND+20','Mag. Acc+20 /Mag. Dmg.+20','"Mag.Atk.Bns."+10',}} --*
+	gear.RDM_INT_Cape = {name="Sucellos's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','INT+5','"Mag.Atk.Bns."+10',}} --*
+	gear.RDM_TP_Cape = {name="Sucellos's Cape", augments={'DEX+20','Accuracy+20 Attack+20','"Store TP"+10','Damage taken-4%',}} --*
+  gear.RDM_WS1_Cape = {name="Sucellos's Cape", augments={'STR+20','Accuracy+20 Attack+20','STR+2','Weapon skill damage +10%',}} --*
+	gear.RDM_WS2_Cape = { name="Sucellos's Cape", augments={'DEX+20','Accuracy+20 Attack+20','DEX+5','Crit.hit rate+10',}} --*
+	gear.RDM_WS3_Cape = { name="Sucellos's Cape", augments={'AGI+20','Rng.Acc.+20 Rng.Atk.+20','Weapon skill damage +10%',}} --*
+	gear.RDM_WS4_Cape = {name="Sucellos's Cape", augments={'MND+20','Mag. Acc+20 /Mag. Dmg.+20','MND+10','Weapon skill damage +10%',}}
+	gear.RDM_WS5_Cape = {name="Sucellos's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','Weapon skill damage +10%',}}
 	gear.DNC_TP_STP_Cape = { name="Senuna's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','Accuracy+5','"Dbl.Atk."+10','Damage taken-5%',}} --*
 	gear.DNC_WS1_Cape = { name="Senuna's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','Weapon skill damage +10%',}} --*
-	
 	gear.THF_TP_Cape = { name="Toutatis's Cape", augments={'DEX+20','Accuracy+20 Attack+20','"Store TP"+10',}} --*
 	gear.THF_WS1_Cape = { name="Toutatis's Cape", augments={'DEX+20','Accuracy+20 Attack+20','Weapon skill damage +10%',}} --*
-	
-	
+	gear.SCH_IDLE_Cape = { name="Lugh's Cape", augments={'HP+60','Eva.+20 /Mag. Eva.+20','Damage taken-5%',}}
+	gear.SCH_INT_Cape = { name="Lugh's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','"Fast Cast"+10',}}
+	gear.WHM_IDLE_Cape = { name="Alaunus's Cape", augments={'HP+60','Eva.+20 /Mag. Eva.+20','Mag. Evasion+5','"Fast Cast"+10',}}
+	gear.WHM_Cure_Cape = { name="Alaunus's Cape", augments={'MND+20','Eva.+20 /Mag. Eva.+20','Enmity-10',}}
+	gear.WHM_TP_Cape = { name="Alaunus's Cape", augments={'DEX+20','Accuracy+20 Attack+20','Accuracy+5','"Store TP"+10',}}

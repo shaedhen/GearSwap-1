@@ -239,10 +239,10 @@ function init_gear_sets()
     -- Idle sets
     sets.idle = {    
 		ammo="Staunch Tathlum",
-    	head="Sakpata's Helm",
+		head="Chevalier's Armet +2",
     	body="Sakpata's Plate",
     	hands="Regal Gauntlets",
-    	legs="Sakpata's Cuisses",
+		legs="Chevalier's Cuisses +2",
     	feet="Sakpata's Leggings",
     	neck="Unmoving Collar +1",
     	waist="Asklepian Belt",
@@ -356,7 +356,7 @@ function init_gear_sets()
     
 	sets.engaged = {
 		ammo="Staunch Tathlum",
-		head="Souveran Schaller +1",
+		head="Chevalier's Armet +2",
 		neck="Unmoving Collar +1",
 		ear1="Etiolation Earring",
 		ear2="Odnowa Earring +1",
@@ -366,13 +366,13 @@ function init_gear_sets()
 		ring2="Petrov Ring",
 		back="Rudianos's Mantle",
 		waist="Asklepian Belt",
-		legs="Souveran Diechlings",
+		legs="Chevalier's Cuisses +2",
 		feet="Sakpata's Leggings"
 	}
 
 	sets.engaged.Tank = {
 		ammo="Staunch Tathlum",
-		head="Souveran Schaller +1",
+		head="Chevalier's Armet +2",
 		neck="Unmoving Collar +1",
 		ear1="Etiolation Earring",
 		ear2="Odnowa Earring +1",
@@ -382,7 +382,7 @@ function init_gear_sets()
 		ring2="Petrov Ring",
 		back="Rudianos's Mantle",
 		waist="Asklepian Belt",
-		legs="Souveran Diechlings",
+		legs="Chevalier's Cuisses +2",
 		feet="Sakpata's Leggings"
 	}
 		

@@ -38,6 +38,10 @@ include('Shaedhen-Items.lua')
     gear.SCH_EMPY_Hands		=	{ name="Arbatel Bracers +2"}
     gear.SCH_EMPY_Legs		=	{ name="Arbatel Pants +2"}
     gear.SCH_EMPY_Feet		=	{ name="Arbatel Loafers +3"}	
+	
+	gear.SCH_IDLE_Cape = { name="Lugh's Cape", augments={'HP+60','Eva.+20 /Mag. Eva.+20','"Fast Cast"+10','Damage taken-5%',}}
+	gear.SCH_INT_Cape = { name="Lugh's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','INT+10','"Mag.Atk.Bns."+10',}}
+	
 end
 
 -- Define sets and vars used by this job file.

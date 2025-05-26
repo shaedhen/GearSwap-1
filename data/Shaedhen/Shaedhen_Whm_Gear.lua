@@ -15,7 +15,12 @@ include('Shaedhen-Items.lua')
 	gear.obi_nuke_waist = "Sekhmet Corset"
 	gear.obi_high_nuke_waist = "Yamabuki-no-Obi"
 	gear.obi_nuke_back = "Toro Cape"
-
+	
+	gear.WHM_IDLE_Cape = { name="Alaunus's Cape", augments={'HP+60','Eva.+20 /Mag. Eva.+20','Mag. Evasion+5','"Fast Cast"+10','Phys. dmg. taken-10%',}}
+	gear.WHM_Cure_Cape = { name="Alaunus's Cape", augments={'MND+20','Eva.+20 /Mag. Eva.+20','Enmity-10',}}
+	gear.WHM_TP_Cape = { name="Alaunus's Cape", augments={'DEX+20','Accuracy+20 Attack+20','Accuracy+5','"Store TP"+10',}}
+	gear.WHM_WS_Cape = { name="Alaunus's Cape", augments={'MND+20','Accuracy+20 Attack+20','Weapon skill damage +10%',}}
+	
 		-- Additional local binds
 	send_command('bind @` gs c cycle MagicBurstMode')
 	send_command('bind ^@!` gs c toggle AutoCaress')

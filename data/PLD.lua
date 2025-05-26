@@ -203,8 +203,13 @@ function job_self_command(commandArgs, eventArgs)
 			return
 
 		elseif player.sub_job == 'RUN' then
-			local abil_recasts = windower.ffxi.get_ability_recasts()
-
+			local abil_recasts = windower.ffxi.get_ability_recasts
+			local spell_recasts = windower.ffxi.get_spell_recasts()
+			if spell_recasts[840] < spell_latency then
+				windower.chat.input('/ma "Foil" <me>')
+				add_tick_delay()
+				return true
+			end
 			if abil_recasts[24] < latency then
 				send_command('input /ja "Swordplay" <me>')
 			end
@@ -219,7 +224,7 @@ function job_self_command(commandArgs, eventArgs)
 			elseif spell_recasts[605] < spell_latency then
 				windower.chat.input('/ma "Geist Wall" <t>')
 	--		elseif spell_recasts[537] < spell_latency then
-	--			windower.chat.input('/ma "Stinking Gas" <t>')
+	--			windower.chat.input('/ma "Stinking Gas" <t>')50222222222222
 	--		elseif spell_recasts[575] < spell_latency then
 	--			windower.chat.input('/ma "Jettatura" <t>')
 			elseif spell_recasts[592] < spell_latency then
@@ -443,10 +448,6 @@ function check_flash_foil()
 		return true
 	elseif spell_recasts[112] < spell_latency then
 		windower.chat.input('/ma "Flash" <t>')
-		add_tick_delay()
-		return true
-	elseif spell_recasts[840] < spell_latency then
-		windower.chat.input('/ma "Foil" <me>')
 		add_tick_delay()
 		return true
 	else

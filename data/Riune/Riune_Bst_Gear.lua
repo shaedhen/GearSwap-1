@@ -38,7 +38,7 @@ function init_gear_sets()
 	sets.precast.JA.Spur = {back="Artio's Mantle",feet="Nukumi Ocreae +1"}
 	sets.SpurAxe = {main="Skullrender"}
 	sets.SpurAxesDW = {main="Skullrender",sub="Skullrender"}
-
+	sets.Dole = {    main="Dolichenus",sub="Kaidate",range="Killer Shortbow"}
 	sets.precast.JA['Feral Howl'] = {}
 
 	sets.precast.JA.Reward = {
@@ -79,19 +79,18 @@ function init_gear_sets()
 		-- WEAPONSKILLS
 		-- Default weaponskill sets.
 	sets.precast.WS = {
-		ammo="Voluspa Tathlum",
 		head="Nyame Helm",
-		neck="Combatant's Torque",
-		ear1="Ishvara Earring",
-		ear2="Sherida Earring",
 		body="Nyame Mail",
-		hands="Nyame Gauntlets",
-		ring1="Regal Ring",
-		ring2="Ilabrat Ring",
-		back="Bleating Mantle",
-		waist="Fotia Belt",
+		hands={ name="Valorous Mitts", augments={'STR+9','DEX+9','Weapon skill damage +2%','Accuracy+16 Attack+16',}},
 		legs="Nyame Flanchard",
-		feet="Nyame Sollerets"
+		feet="Nyame Sollerets",
+		neck={ name="Beastmaster Collar", augments={'Path: A',}},
+		waist="Grunfeld Rope",
+		left_ear="Sherida Earring",
+		right_ear="Sroda Earring",
+		left_ring="Rajas Ring",
+		right_ring="Petrov Ring",
+		back={ name="Artio's Mantle", augments={'STR+20','Accuracy+20 Attack+20','"Dbl.Atk."+10',}},
 	}
 
 		-- Swap to these on Moonshade using WS if at 3000 TP
@@ -161,19 +160,18 @@ function init_gear_sets()
 
 	-- MELEE (SINGLE-WIELD) SETS
 	sets.engaged = {    
-		ammo="Coiste Bodhar",
-    	head="Tali'ah Turban +1",
-    	body="Tali'ah Manteel +2",
-    	hands="Tali'ah Gages +1",
-    	legs="Tali'ah Sera. +1",
-    	feet="Tali'ah Crackows +1",
-    	neck={ name="Beastmaster Collar", augments={'Path: A',}},
-    	waist={ name="Sailfi Belt +1", augments={'Path: A',}},
-    	left_ear="Odnowa Earring",
-    	right_ear="Sherida Earring",
-    	left_ring="Petrov Ring",
-    	right_ring="Warden's Ring",
-    	back="Phalangite Mantle",
+    head="Tali'ah Turban +2",
+    body="Tali'ah Manteel +2",
+    hands="Tali'ah Gages +1",
+    legs="Tali'ah Sera. +2",
+    feet="Tali'ah Crackows +2",
+    neck={ name="Beastmaster Collar", augments={'Path: A',}},
+    waist="Grunfeld Rope",
+    left_ear="Sherida Earring",
+    right_ear="Sroda Earring",
+    left_ring="Defending Ring",
+    right_ring="Tali'ah Ring",
+    back={ name="Artio's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','"Store TP"+10',}},
 	}
 
 
