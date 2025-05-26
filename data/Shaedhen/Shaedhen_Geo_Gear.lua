@@ -161,7 +161,6 @@ function init_gear_sets()
 		waist="Grunfeld Rope",
 	}
 
-
 	sets.precast.WS["Earth Crusher"] = {
 		ammo="Ghastly Tathlum +1",
 		head="Nyame Helm",

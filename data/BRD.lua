@@ -73,9 +73,10 @@ end
 -- Setup vars that are user-independent.  state.Buff vars initialized here will automatically be tracked.
 function job_setup()
 
-	state.ExtraSongsMode = M{['description']='Extra Songs','None','Dummy','DummyLock','FullLength','FullLengthLock'}
+	state.ExtraSongsMode = M{['description']='Extra Songs','None','Dummy','DummyLock','FullLength','FullLengthLock','Cheer','CheerLock'}
 	-- Whether to use Carn (or song daggers in general) under a certain tp threshhold even when weapons are locked.
 	state.CarnMode = M{'Default','Always','300','1000','Never'}
+	state.Pianissimode = M(false, 'Use Miracle Cheer when Pianissimo is active.')
 
 	state.Buff['Aftermath: Lv.3'] = buffactive['Aftermath: Lv.3'] or false
 	state.Buff['Pianissimo'] = buffactive['Pianissimo'] or false
@@ -176,36 +177,8 @@ end
 function job_post_precast(spell, spellMap, eventArgs)
 	if spell.type == 'BardSong' then
 
-		local generalClass = get_song_class(spell)
-	
 		if state.Buff['Nightingale'] then
-		
-			-- Replicate midcast in precast for nightingale including layering.
-			if generalClass and sets.midcast[generalClass] then
-				if sets.midcast[generalClass][state.CastingMode.value] then
-					equip(sets.midcast[generalClass][state.CastingMode.value])
-				else 
-					equip(sets.midcast[generalClass])
-				end
-			end
-
-			if sets.midcast[spell.english] then
-				if sets.midcast[spell.english][state.CastingMode.value] then
-					equip(sets.midcast[spell.english][state.CastingMode.value])
-				else
-					equip(sets.midcast[spell.english])
-				end
-			elseif sets.midcast[get_spell_map(spell)] then
-				if sets.midcast[get_spell_map(spell)][state.CastingMode.Value]
-					then equip(sets.midcast[get_spell_map(spell)][state.CastingMode.Value])
-				else
-					equip(sets.midcast[get_spell_map(spell)])
-				end
-			end
-			
-			if not spell.targets.Enemy and state.ExtraSongsMode.value:contains('FullLength') then
-				equip(sets.midcast.Daurdabla)
-			end
+			equip(get_midcast_set(spell, spellMap))
 		end
 
 	elseif spell.type == 'WeaponSkill' then
@@ -250,13 +223,20 @@ function job_post_midcast(spell, spellMap, eventArgs)
 			if can_dual_wield and sets.midcast.SongEffect.DW then
 				equip(sets.midcast.SongEffect.DW)
 			end
+
+			if state.ExtraSongsMode.value:contains('Cheer') or (state.Pianissimode.value and state.Buff['Pianissimo'] and state.ExtraSongsMode.value == 'None') then
+				equip({range="Miracle Cheer"})
+			elseif state.ExtraSongsMode.value:contains('FullLength') then
+				equip(sets.midcast.Daurdabla)
+			end
+			
+			if state.Buff['Pianissimo'] and sets.midcast[spellMap] and sets.midcast[spellMap].Pianissimo and state.ExtraSongsMode.value == 'None' then
+				equip(sets.midcast[spellMap].Pianissimo)
+			end
 		end
 		
-		if state.ExtraSongsMode.value:contains('FullLength') then
-			equip(sets.midcast.Daurdabla)
-		end
 
-		if not state.ExtraSongsMode.value:contains('Lock') then
+		if not state.ExtraSongsMode.value:endswith('Lock') then
 			state.ExtraSongsMode:reset()
 		end
 

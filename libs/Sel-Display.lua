@@ -192,6 +192,7 @@ function update_job_states()
 		RecoverMode = "Recover MP",
 		ResistDefenseMode = "Resist Defense",
 		RewardMode = "Reward",
+		RollMode = "Roll Mode",
 		RngHelper = "RngHelper",
 		RngHelperQuickDraw = "RngHelperQuickDraw",
 		RuneElement = "Rune Element",
@@ -407,6 +408,10 @@ function update_job_states()
 		elseif n == 'CompensatorMode' then
 			if state.CompensatorMode.value ~= 'Never' then
 				stateBox:append(string.format("%sCompensator: %s%s    ", clr.w, clr.h, state.CompensatorMode.value))
+			end
+		elseif n == 'RollMode' then
+			if state.RollMode.value ~= 'None' then
+				stateBox:append(string.format("%sRollMode: %s%s    ", clr.w, clr.h, state.RollMode.value))
 			end
 		elseif n == 'CarnMode' then
 			if state.CarnMode.value ~= 'Never' then

@@ -62,7 +62,8 @@ end
 -- Setup vars that are user-independent.  state.Buff vars initialized here will automatically be tracked.
 function job_setup()
 	-- Whether to use Compensator under a certain threshhold even when weapons are locked.
-	state.CompensatorMode = M{'Never','300','1000','Always'}
+	state.CompensatorMode = M{['description'] = 'CompensatorMode','Never','300','1000','Always'}
+	state.RollMode = M{['description'] = 'RollMode','None','Recast','Weak','RecastLock','WeakLock'}
 	-- Whether to automatically generate bullets.
 	state.AutoAmmoMode = M(true,'Auto Ammo Mode')
 	state.UseDefaultAmmo = M(true,'Use Default Ammo')
@@ -78,7 +79,7 @@ function job_setup()
 	ammostock = 98
 
 	define_roll_values()
-	init_job_states({"Capacity","AutoFoodMode","AutoTrustMode","LuzafRing","AutoWSMode","RngHelper","AutoShadowMode","AutoStunMode","AutoDefenseMode"},{"AutoBuffMode","AutoSambaMode","AutoRuneMode","Weapons","OffenseMode","RangedMode","WeaponskillMode","ElementalMode","IdleMode","Passive","RuneElement","CompensatorMode","TreasureMode",})
+	init_job_states({"Capacity","AutoFoodMode","AutoTrustMode","LuzafRing","AutoWSMode","RngHelper","AutoShadowMode","AutoStunMode","AutoDefenseMode"},{"AutoBuffMode","AutoSambaMode","AutoRuneMode","Weapons","OffenseMode","RangedMode","WeaponskillMode","ElementalMode","IdleMode","Passive","RuneElement","CompensatorMode","RollMode","TreasureMode",})
 end
 
 
@@ -169,6 +170,10 @@ function job_aftercast(spell, spellMap, eventArgs)
 		if state.CompensatorMode.value ~= 'Never' then
 			equip_weaponset()
 		end
+		
+		if not state.RollMode.value:endswith('Lock') then
+			state.RollMode:reset()
+		end
 		display_roll_info(spell)
 	end
 	
@@ -254,8 +259,22 @@ function job_post_precast(spell, spellMap, eventArgs)
 		if state.LuzafRing.value and item_available("Luzaf's Ring") then
 			equip(sets.precast.LuzafRing)
 		end
-		if spell.type == 'CorsairRoll' and state.CompensatorMode.value ~= 'Never' and (state.CompensatorMode.value == 'Always' or tonumber(state.CompensatorMode.value) > player.tp) then
-			internal_enable_set("Weapons")
+		if spell.type == 'CorsairRoll' then
+			if state.CompensatorMode.value ~= 'Never' and (state.CompensatorMode.value == 'Always' or tonumber(state.CompensatorMode.value) > player.tp) then
+				internal_enable_set("Weapons")
+			end
+			
+			if state.RollMode ~= 'None' then
+				local roll_mode_type = state.RollMode.value
+
+				if state.RollMode.value:endswith('Lock') then
+					roll_mode_type = string.sub(state.RollMode.value, 1, -5)
+				end
+
+				if sets.precast.CorsairRoll[roll_mode_type] then
+					equip(sets.precast.CorsairRoll[roll_mode_type])
+				end
+			end
 		end
 	elseif spell.english == 'Fold' and buffactive['Bust'] == 2 and sets.precast.FoldDoubleBust then
 		equip(sets.precast.FoldDoubleBust)
