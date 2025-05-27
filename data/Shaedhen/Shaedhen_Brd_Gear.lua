@@ -6,7 +6,6 @@ include('Shaedhen-Items.lua')
 	state.WeaponskillMode:options('Normal', 'Capped')
     state.CastingMode:options('Normal','Resistant','AoE','Enmity','LongBallad')
     state.IdleMode:options('Normal','DT')
---	state.WeaponsSongMode:options('Always','300','1000','Never')
 	state.Weapons:options('None','Carnwenhan','DualCarnwenhan','Kali','Gleti','DualNaegling','DualNaegAcc','DualTauret','DualAE')
 
 	-- Adjust this if using the Terpander (new +song instrument)
